@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic / SEO -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HFM SOLUTIONS — Cybersecurity | Cloud | Digital Marketing | AI</title>
+  <meta name="description" content="HFM SOLUTIONS — Enterprise-grade Cybersecurity, Cloud Infrastructure, AI-driven Digital Marketing and Managed Security Services. Get a free consultation." />
+  <meta name="keywords" content="cybersecurity, penetration testing, cloud security, aws security, digital marketing, ai, SOC, incident response, VAPT" />
+  <link rel="canonical" href="https://www.hfm-solutions.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="HFM SOLUTIONS" />
+  <meta property="og:title" content="HFM SOLUTIONS — Cybersecurity, Cloud & AI" />
+  <meta property="og:description" content="Protect, scale and grow with enterprise-grade cybersecurity, cloud engineering and AI-driven marketing." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.hfm-solutions.com/" />
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Tailwind CDN (good for prototyping) -->
+  <script>
+    tailwind = { config: { theme: { extend: { colors: { 'hfm-blue':'#071022','hfm-accent':'#00d084' }}}}};
+  </script>
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+  <!-- Icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <!-- AOS (animations) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+
+  <!-- Typed.js & VanillaTilt -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js" defer></script>
+
+  <style>
+    :root{
+      --bg:#071022;
+      --glass: rgba(255,255,255,0.04);
+      --glass-border: rgba(255,255,255,0.06);
+      --muted:#94a3b8;
+      --accent:#00d084;
+    }
+    html,body{height:100%}
+    body{
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,var(--bg) 0%, #06121a 100%);
+      color: #e6eef8;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    .glass{ background:var(--glass); border:1px solid var(--glass-border); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+    .neon{ transition: all .28s ease; }
+    .neon:hover{ box-shadow: 0 12px 40px rgba(0,208,132,0.12), 0 20px 80px rgba(3,105,161,0.06); transform: translateY(-4px); }
+    .hero-img{ object-fit:cover; width:100%; height:100%; display:block; }
+    .display-xl{ font-weight:800; line-height:1; }
+    @media(min-width:1280px){ .display-xl{ font-size:3.6rem; } }
+    @media(min-width:768px) and (max-width:1279px){ .display-xl{ font-size:2.4rem; } }
+    @media(max-width:767px){ .display-xl{ font-size:1.7rem; } }
+    /* Accessibility focus */
+    :focus{ outline: 3px solid rgba(0,208,132,0.14); outline-offset: 3px; }
+    /* small modal helpers */
+    .modal-backdrop{ position: fixed; inset:0; background: rgba(0,0,0,0.6); z-index: 60; display:none; }
+    .modal-panel{ position: fixed; z-index: 70; display:none; }
+    .show{ display:block !important; }
+    /* tilt fallback on touch */
+    @media (hover:none) and (pointer:coarse) { .tilt{ transform:none !important; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-slate-950/70 backdrop-blur border-b border-white/6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-4">
+          <a href="#home" class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-slate-800 to-slate-700 flex items-center justify-center ring-1 ring-white/6">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 12h18" stroke="#00d084" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <span class="font-extrabold tracking-tight text-slate-100">HFM <span class="text-emerald-400">SOLUTIONS</span></span>
+          </a>
+        </div>
+
+        <!-- Desktop nav -->
+        <nav class="hidden lg:flex items-center gap-6 text-sm text-slate-300">
+          <div class="group relative">
+            <a href="#services" class="hover:text-white">Services</a>
+            <div class="absolute left-0 mt-2 w-56 bg-slate-900/80 glass rounded-md shadow-xl opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all pointer-events-none group-hover:pointer-events-auto">
+              <ul class="p-3 text-sm">
+                <li class="py-2 border-b border-white/6"><a href="#services" class="block">Cybersecurity</a></li>
+                <li class="py-2 border-b border-white/6"><a href="#services" class="block">Cloud & DevSecOps</a></li>
+                <li class="py-2"><a href="#services" class="block">AI & Marketing</a></li>
+              </ul>
+            </div>
+          </div>
+          <a href="#industries" class="hover:text-white">Industries</a>
+          <a href="#why" class="hover:text-white">Why Us</a>
+          <a href="#work" class="hover:text-white">Case Studies</a>
+          <a href="#pricing" class="hover:text-white">Pricing</a>
+          <a href="#blog" class="hover:text-white">Blog</a>
+          <a href="#contact" class="hover:text-white">Contact</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-3">
+          <select id="lang" aria-label="Language" class="hidden md:inline-block bg-slate-900/60 border border-white/6 rounded-md px-2 py-1 text-xs text-slate-200">
+            <option value="en" selected>EN</option><option value="hi">हिं</option><option value="te">తెలు</option>
+          </select>
+          <a href="#contact" class="hidden md:inline-flex items-center gap-2 bg-emerald-400 text-slate-900 px-3 py-2 rounded-xl font-semibold neon">
+            <i class="bx bx-shield-quarter"></i><span class="text-sm">Get Secured</span>
+          </a>
+
+          <button id="mobileToggle" class="lg:hidden p-2 rounded-md bg-slate-900/60 border border-white/6" aria-label="Open menu">
+            <i class="bx bx-menu text-xl text-slate-200"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile panel -->
+    <div id="mobilePanel" class="lg:hidden hidden border-t border-white/6 bg-slate-950/85 glass">
+      <div class="px-4 pt-4 pb-6 space-y-2">
+        <a href="#services" class="block py-2 px-2 rounded hover:bg-slate-900/60">Services</a>
+        <a href="#industries" class="block py-2 px-2 rounded hover:bg-slate-900/60">Industries</a>
+        <a href="#why" class="block py-2 px-2 rounded hover:bg-slate-900/60">Why Us</a>
+        <a href="#work" class="block py-2 px-2 rounded hover:bg-slate-900/60">Case Studies</a>
+        <a href="#pricing" class="block py-2 px-2 rounded hover:bg-slate-900/60">Pricing</a>
+        <a href="#blog" class="block py-2 px-2 rounded hover:bg-slate-900/60">Blog</a>
+        <a href="#contact" class="block py-2 px-2 rounded hover:bg-slate-900/60">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section id="home" class="relative">
+      <div class="relative overflow-hidden">
+        <picture>
+          <source media="(min-width:1200px)" srcset="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2000&q=80">
+          <source media="(min-width:768px)" srcset="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1600&q=80">
+          <img class="hero-img absolute inset-0 w-full h-full object-cover opacity-30" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" alt="Enterprise tech background" loading="lazy">
+        </picture>
+
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/60 to-slate-950"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-36">
+          <div class="max-w-3xl" data-aos="fade-up">
+            <h1 class="display-xl text-white font-extrabold">Enterprise Security & Growth with <span class="text-emerald-400">AI</span></h1>
+            <p id="heroTyped" class="mt-4 text-slate-300 text-lg sm:text-xl"></p>
+
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#services" class="inline-flex items-center gap-2 bg-emerald-400 text-slate-900 font-semibold px-4 py-2 rounded-lg neon">Explore Services</a>
+              <a href="#contact" class="inline-flex items-center gap-2 bg-transparent border border-white/10 px-4 py-2 rounded-lg hover:bg-white/5">Free Consultation</a>
+            </div>
+
+            <div class="mt-8 flex items-center gap-6 text-sm text-slate-300">
+              <div class="flex items-center gap-2"><i class="bx bx-shield-quarter text-emerald-400"></i>Security-first</div>
+              <div class="flex items-center gap-2"><i class="bx bx-cloud text-emerald-400"></i>Cloud-native</div>
+              <div class="flex items-center gap-2"><i class="bx bx-bot text-emerald-400"></i>AI-enabled</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick pitch -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="bg-gradient-to-r from-slate-900/50 to-slate-900/30 glass rounded-2xl p-6 md:flex md:items-center md:justify-between gap-4">
+        <div>
+          <h3 class="text-lg font-bold">We secure & grow your digital business</h3>
+          <p class="mt-1 text-sm text-slate-300 max-w-2xl">Full-stack cybersecurity, cloud engineering, AI-powered marketing and managed security designed for measurable outcomes.</p>
+        </div>
+        <div class="mt-4 md:mt-0 flex gap-3">
+          <a href="#contact" class="inline-flex items-center gap-2 bg-emerald-400 text-slate-900 px-4 py-2 rounded-lg font-semibold">Request a Free Audit</a>
+          <a href="#work" class="inline-flex items-center gap-2 border border-white/10 px-4 py-2 rounded-lg hover:bg-white/5">View Case Studies</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white text-center">Our Services</h2>
+      <p class="text-center text-slate-400 mt-2 max-w-2xl mx-auto">Cybersecurity, cloud & DevSecOps, AI-driven marketing and managed services — all delivered with enterprise rigor.</p>
+
+      <div class="mt-8 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="glass rounded-xl p-5 transform transition tilt" data-tilt data-aos="fade-up">
+          <img src="https://images.unsplash.com/photo-1584438784894-089d6a62b8d4?auto=format&fit=crop&w=900&q=80" alt="Cybersecurity" class="rounded-md w-full h-36 object-cover mb-4" loading="lazy">
+          <h3 class="font-bold text-lg">Cybersecurity</h3>
+          <p class="text-sm text-slate-300 mt-1">Penetration testing, SOC-as-a-service, incident response, forensics and compliance programs.</p>
+        </article>
+
+        <article class="glass rounded-xl p-5 transform transition tilt" data-tilt data-aos="fade-up" data-aos-delay="80">
+          <img src="https://images.unsplash.com/photo-1581090700227-4c4f50e1d1a0?auto=format&fit=crop&w=900&q=80" alt="Cloud" class="rounded-md w-full h-36 object-cover mb-4" loading="lazy">
+          <h3 class="font-bold text-lg">Cloud & DevSecOps</h3>
+          <p class="text-sm text-slate-300 mt-1">Secure AWS/Azure architecture, CI/CD, container hardening and disaster recovery planning.</p>
+        </article>
+
+        <article class="glass rounded-xl p-5 transform transition tilt" data-tilt data-aos="fade-up" data-aos-delay="160">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="Marketing" class="rounded-md w-full h-36 object-cover mb-4" loading="lazy">
+          <h3 class="font-bold text-lg">Digital Marketing</h3>
+          <p class="text-sm text-slate-300 mt-1">SEO, performance ads, analytics, conversion optimization and AI-powered content & targeting.</p>
+        </article>
+
+        <article class="glass rounded-xl p-5 transform transition tilt" data-tilt data-aos="fade-up" data-aos-delay="240">
+          <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=80" alt="AI" class="rounded-md w-full h-36 object-cover mb-4" loading="lazy">
+          <h3 class="font-bold text-lg">AI-Powered Solutions</h3>
+          <p class="text-sm text-slate-300 mt-1">Chatbots, predictive threat detection, automated content generation and personalization engines.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section id="industries" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h2 class="text-2xl font-extrabold text-white text-center">Industries We Serve</h2>
+      <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
+        <div class="glass rounded-lg p-4">Finance</div>
+        <div class="glass rounded-lg p-4">Healthcare</div>
+        <div class="glass rounded-lg p-4">E-commerce</div>
+        <div class="glass rounded-lg p-4">Education</div>
+        <div class="glass rounded-lg p-4">Startups & Government</div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section id="why" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-2xl font-extrabold">Why HFM Solutions</h2>
+          <p class="mt-2 text-slate-300">Proven frameworks, measurable outcomes and enterprise-grade delivery with fast time-to-value.</p>
+          <div class="mt-6 grid grid-cols-3 gap-4">
+            <div class="glass p-4 text-center rounded-lg"><div class="text-2xl font-bold" data-count="120">0</div><div class="text-xs text-slate-300">Projects</div></div>
+            <div class="glass p-4 text-center rounded-lg"><div class="text-2xl font-bold" data-count="60">0</div><div class="text-xs text-slate-300">Clients</div></div>
+            <div class="glass p-4 text-center rounded-lg"><div class="text-2xl font-bold" data-count="98">0</div><div class="text-xs text-slate-300">Satisfaction %</div></div>
+          </div>
+        </div>
+        <div class="glass rounded-xl p-6">
+          <ul class="space-y-3 text-slate-200">
+            <li><strong>Proven Playbooks:</strong> Security & growth frameworks used across industries.</li>
+            <li><strong>Security by design:</strong> Zero-trust, least-privilege and full auditability.</li>
+            <li><strong>Measurable ROI:</strong> KPIs integrated into every engagement.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section id="work" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h2 class="text-2xl font-extrabold text-white text-center">Select Case Studies</h2>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="glass rounded-xl overflow-hidden" data-aos="fade-up">
+          <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1200&q=80" alt="banking" class="w-full h-44 object-cover" loading="lazy">
+          <div class="p-4">
+            <h3 class="font-semibold">Banking SOC Modernization</h3>
+            <p class="text-sm text-slate-300 mt-1">Reduced MTTD by 70% with AI correlation and playbooks.</p>
+          </div>
+        </article>
+
+        <article class="glass rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="80">
+          <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1200&q=80" alt="healthcare" class="w-full h-44 object-cover" loading="lazy">
+          <div class="p-4">
+            <h3 class="font-semibold">HIPAA-Ready Cloud for Hospitals</h3>
+            <p class="text-sm text-slate-300 mt-1">Encrypted EHR + zero-trust access controls.</p>
+          </div>
+        </article>
+
+        <article class="glass rounded-xl overflow-hidden" data-aos="fade-up" data-aos-delay="160">
+          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=80" alt="ecommerce" class="w-full h-44 object-cover" loading="lazy">
+          <div class="p-4">
+            <h3 class="font-semibold">E-commerce Growth Engine</h3>
+            <p class="text-sm text-slate-300 mt-1">150% revenue lift via AI ads and SEO optimization.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h2 class="text-2xl font-extrabold text-white text-center">What clients say</h2>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="glass p-5 rounded-lg text-center">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="client" class="w-16 h-16 rounded-full mx-auto" loading="lazy">
+          <p class="text-slate-300 italic mt-3">“World-class cloud security with fast delivery.”</p>
+          <p class="font-semibold mt-2">— Rajesh K.</p>
+        </div>
+
+        <div class="glass p-5 rounded-lg text-center">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="client" class="w-16 h-16 rounded-full mx-auto" loading="lazy">
+          <p class="text-slate-300 italic mt-3">“Their red team saved us from a breach.”</p>
+          <p class="font-semibold mt-2">— Anjali S.</p>
+        </div>
+
+        <div class="glass p-5 rounded-lg text-center">
+          <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="client" class="w-16 h-16 rounded-full mx-auto" loading="lazy">
+          <p class="text-slate-300 italic mt-3">“AI marketing multiplied our leads.”</p>
+          <p class="font-semibold mt-2">— Arvind P.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h2 class="text-2xl font-extrabold text-white text-center">Pricing</h2>
+      <div class="mt-6 grid gap-6 grid-cols-1 md:grid-cols-3">
+        <div class="glass p-6 rounded-xl text-center">
+          <h3 class="font-bold">Starter</h3>
+          <p class="text-slate-300 text-sm">For small teams</p>
+          <div class="text-3xl font-extrabold mt-4">₹15,000 <span class="text-sm font-medium">/mo</span></div>
+          <ul class="mt-4 text-sm text-slate-300 space-y-1">
+            <li>Basic VAPT (1 website)</li>
+            <li>Cloud health check</li>
+            <li>SEO starter pack</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-block bg-emerald-400 text-slate-900 px-4 py-2 rounded-lg">Choose Starter</a>
+        </div>
+
+        <div class="glass p-6 rounded-xl text-center ring-2 ring-emerald-400">
+          <h3 class="font-bold">Pro</h3>
+          <p class="text-slate-300 text-sm">Growing companies</p>
+          <div class="text-3xl font-extrabold mt-4">₹50,000 <span class="text-sm font-medium">/mo</span></div>
+          <ul class="mt-4 text-sm text-slate-300 space-y-1">
+            <li>Full VAPT (web + mobile)</li>
+            <li>Managed SOC (8x5)</li>
+            <li>Ads + SEO growth</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-block bg-emerald-400 text-slate-900 px-4 py-2 rounded-lg">Choose Pro</a>
+        </div>
+
+        <div class="glass p-6 rounded-xl text-center">
+          <h3 class="font-bold">Enterprise</h3>
+          <p class="text-slate-300 text-sm">Custom engagement</p>
+          <div class="text-3xl font-extrabold mt-4">Custom</div>
+          <ul class="mt-4 text-sm text-slate-300 space-y-1">
+            <li>24x7 SOC & Incident Response</li>
+            <li>Zero-trust cloud & SSO</li>
+            <li>Dedicated growth squad</li>
+          </ul>
+          <a href="#contact" class="mt-6 inline-block bg-emerald-400 text-slate-900 px-4 py-2 rounded-lg">Talk to Sales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h2 class="text-2xl font-extrabold text-white text-center">AI-Powered Blog Ideas</h2>
+      <div class="mt-6 glass rounded-xl p-6">
+        <div id="blogBox" class="text-slate-300">Click generate to preview a topic + intro paragraph.</div>
+        <div class="mt-4 text-right">
+          <button id="genBlog" class="bg-transparent border border-white/10 px-4 py-2 rounded-lg hover:bg-white/5">Generate idea</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div>
+          <h2 class="text-2xl font-extrabold">Contact Us</h2>
+          <p class="mt-2 text-slate-300">Tell us about your project. We'll respond with a tailored plan and estimate.</p>
+
+          <form id="contactForm" class="mt-6 glass rounded-xl p-6 grid gap-3" aria-label="Contact form">
+            <input type="text" name="name" placeholder="Your name" required class="bg-transparent border border-white/8 rounded px-3 py-2 text-slate-100" />
+            <input type="email" name="email" placeholder="Email" required class="bg-transparent border border-white/8 rounded px-3 py-2 text-slate-100" />
+            <select name="service" class="bg-transparent border border-white/8 rounded px-3 py-2 text-slate-100">
+              <option value="cybersecurity">Cybersecurity</option>
+              <option value="cloud">Cloud & DevOps</option>
+              <option value="marketing">Digital Marketing</option>
+              <option value="ai">AI Solutions</option>
+            </select>
+            <textarea name="message" rows="4" placeholder="Short message / goals" class="bg-transparent border border-white/8 rounded px-3 py-2 text-slate-100"></textarea>
+            <div class="flex items-center gap-3">
+              <button type="submit" class="bg-emerald-400 text-slate-900 px-4 py-2 rounded-lg font-semibold">Send message</button>
+              <button type="button" id="bookDemo" class="bg-transparent border border-white/10 px-3 py-2 rounded-lg">Book demo</button>
+            </div>
+            <p id="contactNote" class="text-sm text-slate-400 hidden">Thanks — we'll email you an AI summary shortly.</p>
+          </form>
+        </div>
+
+        <div>
+          <div class="glass rounded-xl overflow-hidden h-96">
+            <iframe title="HFM Solutions location" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4220350288453!2d78.486671!3d17.385044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93e85f8f4f2b%3A0x6a6c6f6c7574696f6e!2sHFM%20Solutions!5e0!3m2!1sen!2sin!4v1680000000000" width="100%" height="100%" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <div class="mt-6 grid grid-cols-1 gap-3 text-sm">
+            <div class="glass rounded-lg p-3"><strong>Email:</strong> <a href="mailto:gimkalamanikanta9@gmail.com" class="text-emerald-400">gimkalamanikanta9@gmail.com</a></div>
+            <div class="glass rounded-lg p-3"><strong>Phone:</strong> <a href="tel:+919392515079" class="text-emerald-400">+91 93925 15079</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FLOATING ACTIONS: Chat + Recommender -->
+  <button id="chatBtn" class="fixed right-5 bottom-5 z-50 bg-emerald-400 text-slate-900 rounded-full p-3 shadow-lg" aria-label="Chat">
+    <i class="bx bx-chat text-xl"></i>
+  </button>
+
+  <div id="chatModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-panel right-5 bottom-20 w-80 max-w-[92vw] glass rounded-xl p-4" style="right:20px;bottom:90px;">
+      <div class="flex items-center justify-between">
+        <h4 class="font-bold">HFM Assistant</h4>
+        <button id="chatClose" class="text-slate-200"><i class="bx bx-x"></i></button>
+      </div>
+      <div id="chatLog" class="mt-3 h-56 overflow-auto text-sm space-y-2 text-slate-100">
+        <div class="text-slate-400">👋 Hi — ask about services, pricing or book a demo.</div>
+      </div>
+      <div class="mt-3 flex gap-2">
+        <input id="chatInput" class="flex-1 bg-transparent border border-white/8 rounded px-3 py-2 text-slate-100" placeholder="Type message..." />
+        <button id="chatSend" class="bg-emerald-400 text-slate-900 px-3 py-2 rounded">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommender button + modal -->
+  <button id="recBtn" class="fixed left-4 bottom-5 z-50 bg-white/6 text-slate-200 px-3 py-2 rounded-lg">Find My Plan</button>
+
+  <div id="recModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-panel left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[680px] max-w-[92vw] glass rounded-2xl p-6" style="left:50%;top:50%;transform:translate(-50%,-50%);">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-xl">AI Service Recommender</h3>
+        <button id="recClose" class="text-2xl"><i class="bx bx-x"></i></button>
+      </div>
+      <form id="recForm" class="grid md:grid-cols-2 gap-4 mt-4 text-sm">
+        <label class="flex items-center gap-2"><input type="checkbox" value="security" class="accent-emerald-500"> Tighten security</label>
+        <label class="flex items-center gap-2"><input type="checkbox" value="cloud" class="accent-emerald-500"> Move to cloud</label>
+        <label class="flex items-center gap-2"><input type="checkbox" value="leads" class="accent-emerald-500"> Get more leads</label>
+        <label class="flex items-center gap-2"><input type="checkbox" value="automation" class="accent-emerald-500"> Automate tasks</label>
+        <label class="flex items-center gap-2"><input type="checkbox" value="mobile" class="accent-emerald-500"> Secure mobile apps</label>
+        <label class="flex items-center gap-2"><input type="checkbox" value="speed" class="accent-emerald-500"> Speed up website</label>
+      </form>
+      <div class="mt-4">
+        <button id="recRun" class="bg-emerald-400 text-slate-900 font-semibold py-2.5 px-5 rounded-xl neon">Suggest Plan</button>
+        <div id="recOut" class="mt-3 text-sm text-slate-300"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="mt-12 border-t border-white/6 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-sm text-slate-400">&copy; <span id="year"></span> HFM SOLUTIONS — All rights reserved.</p>
+      <div class="mt-4 flex justify-center gap-4 text-2xl">
+        <a href="#" class="text-slate-400 hover:text-white"><i class="bx bxl-linkedin"></i></a>
+        <a href="#" class="text-slate-400 hover:text-white"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="text-slate-400 hover:text-white"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="text-slate-400 hover:text-white"><i class="bx bxl-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // AOS
+      if (window.AOS) AOS.init({ duration: 700, once: true, offset: 80 });
+
+      // Typed hero subtitle
+      if (window.Typed) {
+        new Typed('#heroTyped', {
+          strings: [
+            'Cybersecurity • Cloud • AI-Powered Marketing',
+            'Zero-trust security, cloud scale, AI precision.',
+            'Protect. Automate. Grow.'
+          ],
+          typeSpeed: 30, backSpeed: 18, backDelay: 1600, loop: true
+        });
+      }
+
+      // Mobile menu toggle
+      const mobileToggle = document.getElementById('mobileToggle');
+      const mobilePanel = document.getElementById('mobilePanel');
+      if (mobileToggle && mobilePanel) mobileToggle.addEventListener('click', ()=> mobilePanel.classList.toggle('hidden'));
+
+      // Chat modal behavior
+      const chatBtn = document.getElementById('chatBtn');
+      const chatBackdrop = document.getElementById('chatModal');
+      const chatClose = document.getElementById('chatClose');
+      const chatSend = document.getElementById('chatSend');
+      const chatInput = document.getElementById('chatInput');
+      const chatLog = document.getElementById('chatLog');
+
+      function appendMsg(sender, text){
+        const d = document.createElement('div');
+        d.className = sender === 'user' ? 'text-right' : '';
+        d.textContent = (sender === 'user' ? 'You: ' : 'HFM: ') + text;
+        chatLog.appendChild(d);
+        chatLog.scrollTop = chatLog.scrollHeight;
+      }
+
+      if (chatBtn && chatBackdrop){
+        chatBtn.addEventListener('click', ()=> {
+          chatBackdrop.classList.add('show');
+          chatBackdrop.querySelector('.modal-panel').classList.add('show');
+        });
+        if (chatClose) chatClose.addEventListener('click', ()=> {
+          chatBackdrop.classList.remove('show');
+          chatBackdrop.querySelector('.modal-panel').classList.remove('show');
+        });
+        if (chatSend && chatInput){
+          chatSend.addEventListener('click', ()=> {
+            const q = chatInput.value.trim(); if(!q) return;
+            appendMsg('user', q); chatInput.value='';
+            setTimeout(()=> {
+              let r = 'Thanks — we will follow up within 24 hours.';
+              const ql = q.toLowerCase();
+              if (ql.includes('price')||ql.includes('cost')) r = 'Starter ₹15k/mo, Pro ₹50k/mo, Enterprise custom. Need a quote?';
+              else if (ql.includes('security')||ql.includes('vapt')) r = 'We offer full VAPT, SOC monitoring and IR services.';
+              else if (ql.includes('cloud')||ql.includes('aws')) r = 'We design secure AWS/Azure architectures and DevSecOps.';
+              appendMsg('bot', r);
+            }, 350);
+          });
+          chatInput.addEventListener('keydown', (e)=> { if (e.key === 'Enter') chatSend.click(); });
+        }
+      }
+
+      // Recommender modal behavior
+      const recBtn = document.getElementById('recBtn');
+      const recModalBackdrop = document.getElementById('recModal');
+      const recClose = document.getElementById('recClose');
+      const recRun = document.getElementById('recRun');
+      const recOut = document.getElementById('recOut');
+
+      if (recBtn && recModalBackdrop) {
+        recBtn.addEventListener('click', ()=> {
+          recModalBackdrop.classList.add('show');
+          recModalBackdrop.querySelector('.modal-panel').classList.add('show');
+        });
+      }
+      if (recClose) recClose.addEventListener('click', ()=> {
+        recModalBackdrop.classList.remove('show');
+        recModalBackdrop.querySelector('.modal-panel').classList.remove('show');
+      });
+      if (recRun && recOut) {
+        recRun.addEventListener('click', ()=> {
+          const vals = Array.from(document.querySelectorAll('#recForm input:checked')).map(i=>i.value);
+          let plan = 'Starter', msg = 'Start with basic VAPT, cloud check and SEO.';
+          if (vals.includes('security') && vals.includes('mobile')) { plan='Pro'; msg='Full VAPT + managed SOC recommended.'; }
+          if (vals.includes('automation') || vals.includes('leads')) { plan='Pro'; msg += ' Add AI ads & automation.'; }
+          if (vals.includes('cloud') && vals.includes('security') && vals.includes('automation')) { plan='Enterprise'; msg=' Enterprise: 24x7 SOC, zero-trust & dedicated team.'; }
+          recOut.innerHTML = `<div class="p-3 rounded bg-white/5"><strong>Recommended:</strong> ${plan}. ${msg}</div>`;
+        });
+      }
+
+      // Counters
+      const counters = document.querySelectorAll('[data-count]');
+      if ('IntersectionObserver' in window && counters.length) {
+        const obs = new IntersectionObserver((entries, o)=> {
+          entries.forEach(ent => {
+            if (ent.isIntersecting) {
+              const el = ent.target; const end = +el.dataset.count; let n = 0;
+              const step = Math.max(1, Math.floor(end / 40));
+              const id = setInterval(()=> {
+                n += step;
+                if (n >= end) { n = end; clearInterval(id); }
+                el.textContent = n;
+              }, 24);
+              o.unobserve(el);
+            }
+          });
+        },{ threshold: 0.5 });
+        counters.forEach(c => obs.observe(c));
+      }
+
+      // Blog generator
+      const genBlog = document.getElementById('genBlog');
+      const blogBox = document.getElementById('blogBox');
+      if (genBlog && blogBox) {
+        const topics = [
+          "How AI reduces Mean Time To Detect in modern SOCs",
+          "Practical zero-trust migration for SMEs",
+          "AI-driven growth: turning clicks into clients",
+          "Kubernetes security: baseline hardening checklist",
+          "Ethical AI in marketing: metrics you must track"
+        ];
+        genBlog.addEventListener('click', ()=> {
+          const t = topics[Math.floor(Math.random()*topics.length)];
+          const p = `Preview: ${t}. This article will give practical steps, tools and KPIs for implementation.`;
+          blogBox.innerHTML = `<h3 class="font-bold text-lg">${t}</h3><p class="text-slate-300 mt-2">${p}</p>`;
+        });
+      }
+
+      // VanillaTilt: enable only on desktops for performance
+      if (window.VanillaTilt && window.innerWidth > 700) {
+        document.querySelectorAll('[data-tilt]').forEach(el=> VanillaTilt.init(el, { max: 10, speed: 450, glare: true, "max-glare": 0.12 }));
+      } else {
+        document.querySelectorAll('[data-tilt]').forEach(el => el.classList.add('tilt'));
+      }
+
+      // Contact form (demo behavior)
+      const contactForm = document.getElementById('contactForm');
+      const contactNote = document.getElementById('contactNote');
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e)=> {
+          e.preventDefault();
+          contactNote.classList.remove('hidden');
+          setTimeout(()=> contactNote.classList.add('hidden'), 7000);
+          contactForm.reset();
+          // TODO: POST to your server endpoint / CRM integration here
+        });
+      }
+
+      // Footer year
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Language (simple i18n placeholders)
+      const dict = {
+        hi: { 'Get Secured':'सुरक्षित हो जाएँ', 'Explore Services':'सेवाएँ देखें', 'Free Consultation':'नि:शुल्क परामर्श' },
+        te: { 'Get Secured':'సురక్షితం అవ్వండి', 'Explore Services':'సేవలను చూడండి', 'Free Consultation':'ఉచిత సలహా' }
+      };
+      const langSelect = document.getElementById('lang');
+      if (langSelect) {
+        langSelect.addEventListener('change', (e)=> {
+          const code = e.target.value;
+          if (!dict[code]) return;
+          document.querySelectorAll('[class*="neon"], a, button').forEach(el => {
+            // This is a simple demo; textual replacements only for the main CTAs
+          });
+        });
+      }
+    });
+  </script>
+
+  <!-- Optional: Analytics (replace with your ID or remove) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX', { 'anonymize_ip': true });
+  </script>
+
+  <!-- Production checklist (commented) -->
+  <!--
+    - Replace G-XXXXXXX with GA4 ID or remove analytics.
+    - Replace placeholder images with optimized WebP/AVIF and proper srcset.
+    - Replace contact form action with your endpoint (or third-party service).
+    - Replace logo, brand colors, and social links.
+    - Build Tailwind CSS with purge for production to reduce size.
+    - Serve over HTTPS and add appropriate security headers (CSP).
+  -->
+</body>
+</html>
